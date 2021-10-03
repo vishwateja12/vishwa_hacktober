@@ -1,0 +1,20 @@
+$blue: #a3d5d3;
+
+body {
+  background-color: $blue;
+}
+
+.heading {
+  text-align:center;
+}
+
+.body-text {
+  text-align:left;  
+  margin : 10px;
+}
+
+ img {
+  display: block;
+  margin: auto;
+  width: 60%;
+}
