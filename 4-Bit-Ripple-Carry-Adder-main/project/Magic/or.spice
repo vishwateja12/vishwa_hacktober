@@ -1,0 +1,33 @@
+* SPICE3 file created from or.ext - technology: scmos
+.include TSMC_180nm.txt
+.param SUPPLY = 1.8
+.option scale = 0.09u
+.global vdd gnd
+
+Vdd vdd gnd 'SUPPLY'
+
+Vin_a1 A gnd pulse 0 1.8 0 100ps 100ps 10ns 20ns
+Vin_b1 B gnd pulse 0 1.8 0 100ps 100ps 5ns 10ns
+
+M1000 Y Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=150 ps=90
+M1001 Y Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1002 Y_bar A Z vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1003 Z B vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1004 Y_bar A gnd Gnd CMSON w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1005 Y_bar B gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+
+.tran 0.1n 100n
+
+.control
+
+run
+
+plot v(A) v(B)+2  v(Y)+4
+
+.endc

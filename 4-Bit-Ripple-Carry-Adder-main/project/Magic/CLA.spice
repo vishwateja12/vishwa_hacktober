@@ -1,0 +1,301 @@
+* SPICE3 file created from CLA.ext - technology: scmos
+.include TSMC_180nm.txt
+.param SUPPLY = 1.8
+.option scale=0.09u
+.global vdd gnd
+
+Vdd vdd gnd 'SUPPLY'
+
+Vin_p1 P1 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+Vin_g1 G1 gnd pwl (0 1.8v 50ns 1.8v 50ns 1.8v 100ns 1.8v)
+
+Vin_p2 P2 gnd pwl (0 1.8v 50ns 1.8v 50ns 1.8v 100ns 1.8v)
+Vin_g2 G2 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+
+Vin_p3 P3 gnd pwl (0 1.8v 50ns 1.8v 50ns 1.8v 100ns 1.8v)
+Vin_g3 G3 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+
+Vin_p4 P4 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+Vin_g4 G4 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+
+Vin_c0 C0 gnd pwl (0 0v 50ns 0v 100ns 0v 100ns 0v)
+
+
+M1000 C4 or_3/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=1000 ps=600
+M1001 C4 or_3/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=3500 ps=1750
+M1002 or_3/Y_bar l3 Z3 vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1003 Z3 G4 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1004 or_3/Y_bar l3 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1005 or_3/Y_bar G4 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+********************************************************
+M1006 l3 or_2/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1007 l3 or_2/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1008 or_2/Y_bar l2 Z2 vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1009 Z2 l1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1010 or_2/Y_bar l2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1011 or_2/Y_bar l1 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+******************************************************************
+M1012 l4 or_4/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=1250 ps=750
+M1013 l4 or_4/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1014 or_4/Y_bar P3P2P1C0 Z4 vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1015 Z4 P3P2G1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1016 or_4/Y_bar P3P2P1C0 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1017 or_4/Y_bar P3P2G1 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+**********************************************************************
+M1018 l5 or_5/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1019 l5 or_5/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1020 or_5/Y_bar l4 Z5 vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1021 Z5 P3G2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1022 or_5/Y_bar l4 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1023 or_5/Y_bar P3G2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+*****************************************************************
+M1024 C3 or_6/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1025 C3 or_6/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1026 or_6/Y_bar G3 Z6 vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1027 Z6 l5 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1028 or_6/Y_bar G3 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1029 or_6/Y_bar l5 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+******************************************************************
+M1030 l6 or_7/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1031 l6 or_7/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=1500 ps=750
+M1032 or_7/Y_bar P2G1 Z7 vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1033 Z7 P2P1C0 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1034 or_7/Y_bar P2G1 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1035 or_7/Y_bar P2P1C0 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+*********************************************************************
+M1036 C2 or_8/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1037 C2 or_8/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1038 or_8/Y_bar l6 Z8 vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1039 Z8 G2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1040 or_8/Y_bar l6 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1041 or_8/Y_bar G2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+*********************************************************************
+M1042 C1 or_9/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=250 ps=150
+M1043 C1 or_9/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1044 or_9/Y_bar P1C0 Z9 vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1045 Z9 G1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1046 or_9/Y_bar P1C0 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1047 or_9/Y_bar G1 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+**********************************************************************
+M1048 and_0/Y_bar P4 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1049 P4P3P2P1C0 and_0/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1050 and_0/Y_bar P3P2P1C0 zz0 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1051 zz0 P4 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1052 and_0/Y_bar P3P2P1C0 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1053 P4P3P2P1C0 and_0/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+*******************************************************************
+M1054 and_2/Y_bar P4 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1055 P4P3G2 and_2/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1056 and_2/Y_bar P3G2 zz2 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1057 zz2 P4 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1058 and_2/Y_bar P3G2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1059 P4P3G2 and_2/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+*******************************************************************
+M1060 and_1/Y_bar P4 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1061 or_0/A and_1/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1062 and_1/Y_bar P3P2G1 zz1 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1063 zz1 P4 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1064 and_1/Y_bar P3P2G1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+***********************************************************************
+M1065 or_0/A and_1/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1066 and_3/Y_bar P4 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1067 P4G3 and_3/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1068 and_3/Y_bar G3 zz3 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1069 zz3 P4 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1070 and_3/Y_bar G3 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1071 P4G3 and_3/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+*******************************************************************
+M1072 and_4/Y_bar P2P1C0 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1073 P3P2P1C0 and_4/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1074 and_4/Y_bar P3 zz4 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1075 zz4 P2P1C0 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1076 and_4/Y_bar P3 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1077 P3P2P1C0 and_4/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+***********************************************************************
+M1078 and_5/Y_bar P2G1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1079 P3P2G1 and_5/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1080 and_5/Y_bar P3 zz5 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1081 zz5 P2G1 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1082 and_5/Y_bar P3 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1083 P3P2G1 and_5/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+******************************************************
+M1084 and_6/Y_bar G2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1085 P3G2 and_6/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1086 and_6/Y_bar P3 zz6 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1087 zz6 G2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1088 and_6/Y_bar P3 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1089 P3G2 and_6/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+*******************************************************
+M1090 and_7/Y_bar P2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1091 P2P1C0 and_7/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1092 and_7/Y_bar P1C0 zz7 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1093 zz7 P2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1094 and_7/Y_bar P1C0 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1095 P2P1C0 and_7/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+********************************************************
+M1096 and_8/Y_bar P2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1097 P2G1 and_8/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1098 and_8/Y_bar G1 zz8 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1099 zz8 P2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1100 and_8/Y_bar G1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1101 P2G1 and_8/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+**********************************************************
+M1102 and_9/Y_bar C0 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1103 P1C0 and_9/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1104 and_9/Y_bar P1 zz9 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1105 zz9 C0 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1106 and_9/Y_bar P1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1107 P1C0 and_9/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+******************************************************
+M1108 l1 or_0/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1109 l1 or_0/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1110 or_0/Y_bar or_0/A Z0 vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1111 Z0 P4P3P2P1C0 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1112 or_0/Y_bar or_0/A gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1113 or_0/Y_bar P4P3P2P1C0 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+********************************************************
+M1114 l2 or_1/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1115 l2 or_1/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1116 or_1/Y_bar P4G3 Z1 vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1117 Z1 P4P3G2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1118 or_1/Y_bar P4G3 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1119 or_1/Y_bar P4P3G2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+*********************************************************
+
+.tran 0.1n 100ns
+
+.control 
+set hcopypscolor = 1
+set color0 = white
+set color1 = black
+
+run
+set curplottitle = "Sresthavadhani-2019102032-CLA"
+plot v(P1) v(G1)+2 v(C0)+4 v(C1)+6
+plot v(P2) v(G2)+2 v(C2)+4
+plot v(P3) v(G3)+2 v(C3)+4
+plot v(P4) v(G4)+2 v(C4)+4
+
+
+.endc
+

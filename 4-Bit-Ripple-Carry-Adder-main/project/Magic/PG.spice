@@ -1,0 +1,191 @@
+* SPICE3 file created from PG.ext - technology: scmos
+.include TSMC_180nm.txt
+.param SUPPLY = 1.8
+.option scale=0.09u
+.global vdd gnd
+
+Vdd vdd gnd 'SUPPLY'
+
+Vin_a1 A1 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+Vin_b1 B1 gnd pwl (0 1.8v 50ns 1.8v 50ns 0v 100ns 0v)
+
+Vin_a2 A2 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+Vin_b2 B2 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+
+Vin_a3 A3 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+Vin_b3 B3 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+
+Vin_a4 A4 gnd pwl (0 1.8v 50ns 1.8v 50ns 0v 100ns 0v)
+Vin_b4 B4 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+
+M1000 and_0/Y_bar A1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=2800 ps=1400
+M1001 G1 and_0/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1002 and_0/Y_bar B1 Z1 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1003 Z1 A1 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=1200 ps=720
+M1004 and_0/Y_bar B1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1005 G1 and_0/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+*********************************************
+M1006 and_2/Y_bar A3 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1007 G3 and_2/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1008 and_2/Y_bar B3 Z3 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1009 Z3 A3 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1010 and_2/Y_bar B3 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1011 G3 and_2/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+*********************************************
+M1012 and_1/Y_bar A2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1013 G2 and_1/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1014 and_1/Y_bar B2 Z2 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1015 Z2 A2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1016 and_1/Y_bar B2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1017 G2 and_1/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1018 and_3/Y_bar A4 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+************************************************
+M1019 G4 and_3/Y_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1020 and_3/Y_bar B4 Z4 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1021 Z4 A4 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1022 and_3/Y_bar B4 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1023 G4 and_3/Y_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+**********************************************************
+M1024 P1 A1 o1 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1025 P1 B1 xor_0/m vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1026 l1 xor_0/B_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1027 xor_0/m xor_0/A_bar vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1028 n1 xor_0/B_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1029 xor_0/B_bar B1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1030 o1 B1 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1031 xor_0/A_bar A1 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1032 P1 A1 l1 vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1033 xor_0/B_bar B1 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1034 xor_0/A_bar A1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1035 P1 xor_0/A_bar n1 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+***********************************************************************
+M1036 P2 A2 o2 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1037 P2 B2 xor_1/m vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1038 l2 xor_1/B_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1039 xor_1/m xor_1/A_bar vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1040 n2 xor_1/B_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1041 xor_1/B_bar B2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1042 o2 B2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1043 xor_1/A_bar A2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1044 P2 A2 l2 vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1045 xor_1/B_bar B2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1046 xor_1/A_bar A2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1047 P2 xor_1/A_bar n2 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+****************************************************************************
+M1048 P3 A3 o3 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1049 P3 B3 xor_2/m vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1050 l3 xor_2/B_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1051 xor_2/m xor_2/A_bar vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1052 n3 xor_2/B_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1053 xor_2/B_bar B3 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1054 o3 B3 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1055 xor_2/A_bar A3 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1056 P3 A3 l3 vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1057 xor_2/B_bar B3 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1058 xor_2/A_bar A3 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1059 P3 xor_2/A_bar n3 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+***************************************************************************
+M1060 P4 A4 o4 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1061 P4 B4 xor_3/m vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1062 l4 xor_3/B_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1063 xor_3/m xor_3/A_bar vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1064 n4 xor_3/B_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1065 xor_3/B_bar B4 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1066 o4 B4 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1067 xor_3/A_bar A4 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1068 P4 A4 l4 vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1069 xor_3/B_bar B4 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1070 xor_3/A_bar A4 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1071 P4 xor_3/A_bar n4 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+
+.tran 0.1n 100n
+
+.control
+
+set hcopypscolor = 1
+set color0 = white
+set color1 = black
+
+run
+set curplottitle = "Sresthavadhani-2019102032-PG_magic"
+plot v(A1) v(B1)+2 v(P1)+4 v(G1)+6
+
+plot v(A2) v(B2)+2 v(P2)+4 v(G2)+6
+
+plot v(A3) v(B3)+2 v(P3)+4 v(G3)+6
+
+plot v(A4) v(B4)+2 v(P4)+4 v(G4)+6
+
+.endc

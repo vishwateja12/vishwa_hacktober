@@ -1,0 +1,87 @@
+Flip flop
+.include TSMC_180nm.txt
+.param SUPPLY = 1.8
+.option scale=0.09u
+.global vdd gnd
+
+Vdd vdd gnd 'SUPPLY'
+Vin_d D gnd pwl (0 0v 3ns 0v 3ns 1.8v 100ns 1.8v)
+*Vin_d D gnd pulse 0 1.8 2ns 100ps 100ps 3ns 6ns
+Vin_Clk Clk 0 pulse 1.8 0 0ns 100ps 100ps 5ns 10ns
+
+M1000 Z1 R vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=700 ps=350
+M1001 Zz0 D gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1002 Z1 R Zz0 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1003 Z1 D vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+*************************************************************
+M1004 P Z0 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=600 ps=300
+M1005 Zz1 Clk gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=200 ps=120
+M1006 P Z0 Zz1 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1007 P Clk vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+******************************************************************
+M1008 Z0 P vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1009 Zz2 Z1 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1010 Z0 P Zz2 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1011 Z0 Z1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+*******************************************************************
+M1012 S R vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1013 Zz3 Q gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1014 S R Zz3 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1015 S Q vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+******************************************************************
+M1016 Q P vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1017 Zz4 S gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1018 Q P Zz4 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1019 Q S vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+*****************************************************************
+M1020 R Z1 Zz31 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1021 R Z1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1022 R Clk vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1023 Zz31 Clk Zz32 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1024 Zz32 P gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1025 R P vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+********************************************************************
+
+.tran 0.1n 50n
+
+.measure tran tpd1
++TRIG v(clk) val = 'SUPPLY/2' RISE = 1
++TARG v(Q) val = 'SUPPLY/2' RISE = 1
+
+.control
+set hcopypscolor = 1
+set color0 = white
+set color1 = black
+run
+set curplottilte = "Sresthavadhani-2019102032-flip"
+plot v(Clk) v(D)+2 v(Q)+4
+hardcopy flip.eps v(Clk) v(D)+2 v(Q)+4
+
+.endc
+

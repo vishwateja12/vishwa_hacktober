@@ -1,0 +1,132 @@
+* SPICE3 file created from sum.ext - technology: scmos
+.include TSMC_180nm.txt
+.param SUPPLY = 1.8
+.option scale=0.09u
+.global vdd gnd
+
+Vdd vdd gnd 'SUPPLY'
+
+Vin_p1 P1 gnd pwl (0 1.8v 50ns 1.8v 50ns 0v 100ns 0v)
+Vin_p2 P2 gnd pwl (0 1.8v 50ns 1.8v 50ns 0v 100ns 0v)
+Vin_p3 P3 gnd pwl (0 1.8v 50ns 1.8v 50ns 0v 100ns 0v)
+Vin_p4 P4 gnd pwl (0 1.8v 50ns 1.8v 50ns 0v 100ns 0v)
+
+Vin_c2 C2 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+Vin_c3 C3 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+Vin_c4 C4 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+Vin_c1 C1 gnd pwl (0 0v 50ns 0v 50ns 0v 100ns 0v)
+
+
+M1000 S1 P1 o1 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1001 S1 C1 xor_0/m vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1002 l1 xor_0/B_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=1600 ps=800
+M1003 xor_0/m xor_0/A_bar vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 n1 xor_0/B_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=800 ps=480
+M1005 xor_0/B_bar C1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1006 o1 C1 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1007 xor_0/A_bar P1 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1008 S1 P1 l1 vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1009 xor_0/B_bar C1 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1010 xor_0/A_bar P1 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1011 S1 xor_0/A_bar n1 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1012 S2 P2 o2 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1013 S2 C2 xor_1/m vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1014 l2 xor_1/B_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1015 xor_1/m xor_1/A_bar vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1016 n2 xor_1/B_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1017 xor_1/B_bar C2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1018 o2 C2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1019 xor_1/A_bar P2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1020 S2 P2 l2 vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1021 xor_1/B_bar C2 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1022 xor_1/A_bar P2 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1023 S2 xor_1/A_bar n2 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1024 S3 P3 o3 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1025 S3 C3 xor_2/m vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1026 l3 xor_2/B_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1027 xor_2/m xor_2/A_bar vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1028 n3 xor_2/B_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1029 xor_2/B_bar C3 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1030 o3 C3 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1031 xor_2/A_bar P3 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1032 S3 P3 l3 vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1033 xor_2/B_bar C3 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1034 xor_2/A_bar P3 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1035 S3 xor_2/A_bar n3 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1036 S4 P4 o4 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+M1037 S4 C4 xor_3/m vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1038 l4 xor_3/B_bar vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1039 xor_3/m xor_3/A_bar vdd vdd CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1040 n4 xor_3/B_bar gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1041 xor_3/B_bar C4 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1042 o4 C4 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1043 xor_3/A_bar P4 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1044 S4 P4 l4 vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1045 xor_3/B_bar C4 gnd Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1046 xor_3/A_bar P4 vdd vdd CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1047 S4 xor_3/A_bar n4 Gnd CMOSN w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+
+.tran 0.1n 100n
+
+.control
+set hcopypscolor =1
+set color0 = white
+set color1 = black
+
+run
+
+set curplottitle = "sresthavadhani-2019102032-Sum"
+plot v(P1) v(C1)+2 v(S1)+4
+plot v(P2) v(C2)+2 v(S2)+4
+plot v(P3) v(C3)+2 v(S3)+4
+plot v(P4) v(C4)+2 v(S4)+4
+
+.endc

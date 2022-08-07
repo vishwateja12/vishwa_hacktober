@@ -1,0 +1,161 @@
+magic
+tech scmos
+timestamp 1618762910
+<< metal1 >>
+rect 173 101 186 104
+rect 257 101 269 104
+rect 456 101 475 104
+rect 546 101 560 104
+rect 747 101 768 104
+rect 839 101 855 104
+rect 1042 101 1063 104
+rect -18 90 -14 93
+rect 265 90 269 93
+rect 557 90 560 93
+rect 852 90 855 93
+rect 465 36 467 39
+rect 759 36 760 39
+rect 1053 36 1055 39
+rect 173 -7 186 -4
+rect 257 -7 269 -4
+rect 456 -7 474 -4
+rect 546 -7 560 -4
+rect 747 -7 767 -4
+rect 839 -7 855 -4
+rect 1042 -7 1062 -4
+<< m2contact >>
+rect -23 89 -18 94
+rect 260 89 265 94
+rect 552 89 557 94
+rect 847 90 852 95
+rect 184 43 189 49
+rect 259 44 264 50
+rect 470 43 475 48
+rect 548 44 553 49
+rect 763 43 768 48
+rect 841 44 846 49
+rect 1057 43 1062 48
+rect 1137 44 1142 49
+rect 177 33 182 39
+rect 460 35 465 40
+rect 754 35 759 40
+rect 1048 35 1053 40
+<< metal2 >>
+rect -23 108 -20 122
+rect -14 117 -11 122
+rect -9 112 187 115
+rect -23 105 180 108
+rect -23 94 -20 105
+rect 170 -15 173 42
+rect 177 39 180 105
+rect 184 49 187 112
+rect 260 108 263 122
+rect 269 117 272 122
+rect 274 112 473 115
+rect 260 105 463 108
+rect 260 94 263 105
+rect 260 -12 263 44
+rect 453 -17 456 42
+rect 460 40 463 105
+rect 470 48 473 112
+rect 552 108 555 122
+rect 560 115 563 122
+rect 559 112 766 115
+rect 552 105 757 108
+rect 552 94 555 105
+rect 549 -14 552 44
+rect 744 -14 747 42
+rect 754 40 757 105
+rect 763 48 766 112
+rect 847 107 850 120
+rect 855 117 858 120
+rect 859 112 1060 115
+rect 847 104 1051 107
+rect 847 95 850 104
+rect 842 -11 845 44
+rect 1039 -16 1042 42
+rect 1048 40 1051 104
+rect 1057 48 1060 112
+rect 1138 -12 1141 44
+<< m3contact >>
+rect -14 112 -9 117
+rect 269 112 274 117
+rect 854 112 859 117
+<< metal3 >>
+rect 559 112 564 117
+rect -14 95 -11 112
+rect 269 95 272 112
+rect 560 95 563 112
+rect 855 95 858 112
+use xor  xor_0
+timestamp 1618299895
+transform 1 0 33 0 1 37
+box -47 -44 140 67
+use and  and_0
+timestamp 1618750553
+transform 1 0 208 0 1 47
+box -30 -54 55 57
+use xor  xor_1
+timestamp 1618299895
+transform 1 0 316 0 1 37
+box -47 -44 140 67
+use and  and_1
+timestamp 1618750553
+transform 1 0 497 0 1 47
+box -30 -54 55 57
+use xor  xor_2
+timestamp 1618299895
+transform 1 0 607 0 1 37
+box -47 -44 140 67
+use and  and_2
+timestamp 1618750553
+transform 1 0 790 0 1 47
+box -30 -54 55 57
+use xor  xor_3
+timestamp 1618299895
+transform 1 0 902 0 1 37
+box -47 -44 140 67
+use and  and_3
+timestamp 1618750553
+transform 1 0 1085 0 1 47
+box -30 -54 55 57
+<< labels >>
+rlabel metal1 -21 90 -14 93 1 A1
+rlabel metal2 -23 94 -20 122 3 A1
+rlabel metal2 -20 105 180 108 1 A1
+rlabel metal2 177 37 180 108 1 A1
+rlabel metal2 184 43 187 115 1 B1
+rlabel metal2 -14 112 187 115 1 B1
+rlabel space -14 98 -11 122 1 B1
+rlabel space -14 101 1134 104 1 vdd
+rlabel space -14 -7 1134 -4 1 gnd
+rlabel metal2 170 -15 173 38 1 P1
+rlabel metal2 260 -12 263 44 1 G1
+rlabel space 269 95 272 122 1 B2
+rlabel metal2 270 112 473 115 1 B2
+rlabel metal2 470 46 473 112 1 B2
+rlabel metal2 460 40 463 108 1 A2
+rlabel metal2 263 105 463 108 1 A2
+rlabel metal2 453 -17 456 38 1 P2
+rlabel metal2 549 -14 552 45 1 G2
+rlabel metal2 260 89 263 122 1 A2
+rlabel space 260 90 270 93 1 A2
+rlabel metal1 552 90 560 93 1 A3
+rlabel metal2 552 90 555 122 1 A3
+rlabel metal2 552 105 757 108 1 A3
+rlabel metal2 754 36 757 108 1 A3
+rlabel metal2 763 46 766 115 1 B3
+rlabel metal2 560 112 766 115 1 B3
+rlabel space 560 95 563 122 1 B3
+rlabel metal2 744 -14 747 38 1 P3
+rlabel metal2 842 -11 845 45 1 G3
+rlabel metal2 847 90 850 120 1 A4
+rlabel space 847 90 856 93 1 A4
+rlabel space 855 98 858 120 1 B4
+rlabel metal2 856 112 1060 115 1 B4
+rlabel metal2 1057 46 1060 115 1 B4
+rlabel metal2 1048 37 1051 107 1 A4
+rlabel metal2 850 104 1051 107 1 A4
+rlabel metal2 1039 -16 1042 38 1 P4
+rlabel metal2 1138 -12 1141 45 7 G4
+<< end >>
